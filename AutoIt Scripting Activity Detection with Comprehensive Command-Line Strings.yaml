@@ -6,9 +6,6 @@ references:
     - https://exchange.xforce.ibmcloud.com/collection/Darkgate-December-2023-acb7c12f4befcadfabce8ef0634cd16f\
     - https://www.youtube.com/watch?v=aL4CbfL2O_I
 date: 2024-02-20
-references:
-    - https://exchange.xforce.ibmcloud.com/collection/Darkgate-December-2023-acb7c12f4befcadfabce8ef0634cd16f\
-    - https://www.youtube.com/watch?v=aL4CbfL2O_I
 logsource:
   product: windows
   service: sysmon
