@@ -1,8 +1,7 @@
-title: Basic AutoIT Exec
+title: Renamed AutoIT Exec
 id: a7126fc9-28fa-45a4-9011-7ba74bd3c987
 status: experimental
-description: |
-    This rule is designed to identify instances where AutoIT, a scripting and automation language for Windows, is potentially misused. AutoIT is widely recognized for its legitimate use in automating Windows GUI tasks but has been increasingly exploited for malicious purposes. By detecting renamed executions of AutoIT executables, such as AutoIt2.exe or AutoIt3.exe, this rule aims to uncover attempts to evade detection, a common tactic in the deployment of malware, ransomware, or other cyber threats. Referencing a case study from Darkgate's activities in December 2023 and a CactusCon talk from Feburary 2024, it underscores the importance of vigilance against such evasion techniques.
+description: "This rule is designed to identify instances where AutoIT, a scripting and automation language for Windows, is potentially misused. AutoIT is widely recognized for its legitimate use in automating Windows GUI tasks but has been increasingly exploited for malicious purposes. By detecting renamed executions of AutoIT executables, such as AutoIt2.exe or AutoIt3.exe, this rule aims to uncover attempts to evade detection, a common tactic in the deployment of malware, ransomware, or other cyber threats. Referencing a case study from Darkgate's activities in December 2023 and a CactusCon talk from Feburary 2024, it underscores the importance of vigilance against such evasion techniques."
 references:
     - https://exchange.xforce.ibmcloud.com/collection/Darkgate-December-2023-acb7c12f4befcadfabce8ef0634cd16f\
     - https://www.youtube.com/watch?v=aL4CbfL2O_I

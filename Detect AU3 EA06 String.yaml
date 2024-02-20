@@ -1,0 +1,17 @@
+title: Detect AU3 EA06 String
+id: 20c2948a-ee8b-4e97-ac88-43291f0bc9cf
+status: experimental
+description: "This rule is designed to detect the presence of the string \"AU3!EA06\" within files. The string is significant in the context of AutoIT scripts, which are often used in both legitimate and malicious applications. Because the AutoIT interpreter does not require specific file extensions (such as *.au3 or *.a3x) and the script contents can be encoded or encrypted, traditional file-based detection mechanisms may not be reliable. Detecting the presence of this string within files may serve as the only reliable method to identify the use of AutoIT in malicious cases, where the script content is obfuscated to evade detection."
+author: Arizona Cyber Threat Response Alliance - Threat Intell Support Unit
+references:
+    - https://exchange.xforce.ibmcloud.com/collection/Darkgate-December-2023-acb7c12f4befcadfabce8ef0634cd16f\
+    - https://www.youtube.com/watch?v=aL4CbfL2O_I
+date: 2024-02-20
+logic:
+  strings:
+    - id: au3_string
+      value: "AU3!EA06"
+  condition: au3_string
+falsepositives:
+  - "Legitimate AutoIt scripting activities"
+level: low

@@ -1,9 +1,7 @@
 title: AutoIt Scripting Activity Detection with Comprehensive Command-Line Strings
 id: 80efbac0-6840-4f73-938d-f245427d9b31
 status: experimental
-description: >
-  Detects command-line or file creation activities related to AutoIt scripting, indicating potential misuse or malicious AutoIt activities.
-  Each command-line pattern is listed as an individual selection to capture a broad spectrum of AutoIt-related activities.
+description: "Detects command-line or file creation activities related to AutoIt scripting, indicating potential misuse or malicious AutoIt activities. Each command-line pattern is listed as an individual selection to capture a broad spectrum of AutoIt-related activities."
 references:
     - https://exchange.xforce.ibmcloud.com/collection/Darkgate-December-2023-acb7c12f4befcadfabce8ef0634cd16f\
     - https://www.youtube.com/watch?v=aL4CbfL2O_I
