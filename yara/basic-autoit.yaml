@@ -1,0 +1,26 @@
+title: Basic AutoIT Exec
+id: 1ab3cc0a-bc12-43d0-ab9f-6a9d17a7f9cf
+status: experimental
+description: |
+    This rule is designed to identify instances where AutoIT, a scripting and automation language for Windows, is potentially misused. AutoIT is widely recognized for its legitimate use in automating Windows GUI tasks but has been increasingly exploited for malicious purposes. By detecting renamed executions of AutoIT executables, such as AutoIt2.exe or AutoIt3.exe, this rule aims to uncover attempts to evade detection, a common tactic in the deployment of malware, ransomware, or other cyber threats. Referencing a case study from Darkgate's activities in December 2023, it underscores the importance of vigilance against such evasion techniques.
+references:
+    - https://exchange.xforce.ibmcloud.com/collection/Darkgate-December-2023-acb7c12f4befcadfabce8ef0634cd16f\
+    - https://www.youtube.com/watch?v=aL4CbfL2O_I
+author: VSRT
+date: 2024/02/20
+
+logsource:
+    category: process_creation
+    product: windows
+detection:
+    selection_1:
+        CommandLine|contains:
+            - ' /AutoIt3ExecuteScript'
+    selection_2:
+        OriginalFileName:
+            - 'AutoIt3.exe'
+            - 'AutoIt2.exe'
+    condition: selection_1 and selection_2
+falsepositives:
+    - Unknown
+level: high

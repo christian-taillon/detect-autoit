@@ -1,0 +1,75 @@
+title: AutoIt Scripting Activity Detection with Comprehensive Command-Line Strings
+id: 80efbac0-6840-4f73-938d-f245427d9b31
+status: experimental
+description: >
+  Detects command-line or file creation activities related to AutoIt scripting, indicating potential misuse or malicious AutoIt activities.
+  Each command-line pattern is listed as an individual selection to capture a broad spectrum of AutoIt-related activities.
+references:
+    - https://exchange.xforce.ibmcloud.com/collection/Darkgate-December-2023-acb7c12f4befcadfabce8ef0634cd16f\
+    - https://www.youtube.com/watch?v=aL4CbfL2O_I
+date: 2024-02-20
+references:
+    - https://exchange.xforce.ibmcloud.com/collection/Darkgate-December-2023-acb7c12f4befcadfabce8ef0634cd16f\
+    - https://www.youtube.com/watch?v=aL4CbfL2O_I
+logsource:
+  product: windows
+  service: sysmon
+detection:
+  selection1:
+    EventID: 1
+    CommandLine: '*\AutoIt3ExecuteLine*'
+  selection2:
+    EventID: 1
+    CommandLine: '*\AutoIt3ExecuteScript*'
+  selection3:
+    EventID: 1
+    CommandLine: '*\AutoIt3OutputDebug*'
+  selection4:
+    EventID: 1
+    CommandLine: '*AutoIt3GUI*'
+  selection5:
+    EventID: 1
+    CommandLine: '*AutoIt v3*'
+  selection6:
+    EventID: 1
+    CommandLine: '*AutoIt script files (*.au3 *.a3x)*'
+  selection7:
+    EventID: 1
+    CommandLine: '*AutoIt*'
+  selection8:
+    EventID: 1
+    CommandLine: '*AUTOIT SCRIPT*'
+  selection9:
+    EventID: 1
+    CommandLine: '*AUTOIT NO CMDEXECUTE*'
+  selection10:
+    EventID: 1
+    CommandLine: '*Software\AutoIt v3\AutoIt*'
+  selection11:
+    EventID: 1
+    CommandLine: '*\*.au3;*.a3x*'
+  selection12:
+    EventID: 1
+    CommandLine: '*AutoIt Error*'
+  selection13:
+    EventID: 1
+    CommandLine: '*AutoIt has detected the stack has become corrupt.*'
+  selection14:
+    EventID: 1
+    CommandLine: '*CompiledScript*'
+  selection15:
+    EventID: 1
+    CommandLine: '*AutoIt v3 Script: 3 3 8 1*'
+  selection16:
+    EventID: 1
+    CommandLine: '*AutoIt v3 Script: 3 3 8 0*'
+  selection17:
+    EventID: 1
+    CommandLine: '*AutoIt3*'
+  selection18:
+    EventID: 1
+    CommandLine: '*AUTOITEXE*'
+condition: 1 of selection*
+falsepositives:
+  - 'Legitimate AutoIt scripting activities'
+level: low

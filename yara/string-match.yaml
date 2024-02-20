@@ -1,0 +1,38 @@
+title: AutoIt Strings Detection
+id: 835f3d22-7c81-408d-8377-d2554ee0d183
+status: experimental
+description: "Detects a wide range of AutoIt-related strings in files or command lines, indicative of AutoIt scripting usage or potential misuse."
+references:
+    - https://exchange.xforce.ibmcloud.com/collection/Darkgate-December-2023-acb7c12f4befcadfabce8ef0634cd16f\
+    - https://www.youtube.com/watch?v=aL4CbfL2O_I
+author: Arizona Cyber Threat Response Alliance - Threat Intell Support Unit
+date: 2024-02-20
+tags:
+  - autoit
+logsource:
+  category: file
+  product: windows
+detection:
+  strings:
+    - $string1: "/AutoIt3ExecuteLine"
+    - $string2: "/AutoIt3ExecuteScript"
+    - $string3: "/AutoIt3OutputDebug"
+    - $string4: "AutoIt3GUI"
+    - $string5: "AutoIt v3"
+    - $string6: "AutoIt script files (*.au3 *.a3x)"
+    - $string7: "AutoIt"
+    - $string8: "AUTOIT SCRIPT"
+    - $string9: "AUTOIT NO CMDEXECUTE"
+    - $string10: "Software\\AutoIt v3\\AutoIt"
+    - $string11: "*.au3;*.a3x"
+    - $string12: "AutoIt Error"
+    - $string13: "AutoIt has detected the stack has become corrupt."
+    - $string14: "CompiledScript"
+    - $string15: "AutoIt v3 Script: 3 3 8 1"
+    - $string16: "AutoIt v3 Script: 3 3 8 0"
+    - $string17: "AutoIt3"
+    - $string18: "AUTOITEXE"
+  condition: 4 of them
+falsepositives:
+  - "Legitimate AutoIt scripting activities"
+level: low
